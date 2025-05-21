@@ -1,0 +1,8 @@
+# direcrories
+build/**
+dist/**
+__pycache__/**
+.venv/**
+
+# files
+main.spec
