@@ -1,5 +1,5 @@
 # Minecraft Relative Coordinates Calculator
-[RU](README-ru.md) EN
+EN [RU](READMES/README-ru.md) 
 ## About the project
 This project was written by me for myself, when I got tired of calculating relative coordinates for command block.
 
