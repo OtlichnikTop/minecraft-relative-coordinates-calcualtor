@@ -15,7 +15,7 @@ To access from anywhere in Linux, move the file to `~/.local/bin/`.
 3. Click the `Посчитать` button
 4. A pop-up window with the relative coordinates for the command block will appear
 
-## Installation from source code
+## Building from source code
 ### Dependencies
 The project requires [Python](https://www.python.org/) 3.10 and above.
 
