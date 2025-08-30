@@ -1,5 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QMessageBox, QApplication
+from PyQt6.QtWidgets import QApplication, QMessageBox
 
 
 class Ui_MainWindow(object):
@@ -16,8 +16,9 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setItalic(True)
         MainWindow.setFont(font)
-        MainWindow.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);")
+        MainWindow.setStyleSheet(
+            "background-color: rgb(0, 0, 0);\n" "color: rgb(255, 255, 255);"
+        )
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setStyleSheet("")
         self.centralwidget.setObjectName("centralwidget")
@@ -152,24 +153,24 @@ class Ui_MainWindow(object):
         font.setUnderline(False)
         font.setStrikeOut(False)
         self.pushButton_Calculate.setFont(font)
-        self.pushButton_Calculate.setStyleSheet("color: rgb(0, 170, 255);\n"
-"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.255435 rgba(0, 0, 255, 255), stop:0.521739 rgba(85, 0, 255, 255));")
+        self.pushButton_Calculate.setStyleSheet(
+            "color: rgb(0, 170, 255);\n"
+            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.255435 rgba(0, 0, 255, 255), stop:0.521739 rgba(85, 0, 255, 255));"
+        )
         self.pushButton_Calculate.setObjectName("pushButton_Calculate")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        
+
         self.close_shortcut = QtGui.QShortcut("Ctrl+Q", MainWindow)
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
-        
-        self.close_shortcut.activated.connect(MainWindow.close)
-        
-        self.pushButton_Calculate.clicked.connect(self.calculate)
 
-        
+        self.close_shortcut.activated.connect(MainWindow.close)
+
+        self.pushButton_Calculate.clicked.connect(self.calculate)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -184,52 +185,48 @@ class Ui_MainWindow(object):
         self.label_BY.setText(_translate("MainWindow", "Y"))
         self.label_BZ.setText(_translate("MainWindow", "Z"))
         self.pushButton_Calculate.setText(_translate("MainWindow", "Посчитать"))
-        
-        
+
     def calculate(self):
-        AX=self.spinBox_AX.value()
-        AY=self.spinBox_AY.value()
-        AZ=self.spinBox_AZ.value()
-        BX=self.spinBox_BX.value()
-        BY=self.spinBox_BY.value()
-        BZ=self.spinBox_BZ.value()
-        
-        CX = BX-AX
-        CY = BY-AY
-        CZ = BZ-AZ
-        
+        AX = self.spinBox_AX.value()
+        AY = self.spinBox_AY.value()
+        AZ = self.spinBox_AZ.value()
+        BX = self.spinBox_BX.value()
+        BY = self.spinBox_BY.value()
+        BZ = self.spinBox_BZ.value()
+
+        CX = BX - AX
+        CY = BY - AY
+        CZ = BZ - AZ
+
         result = QMessageBox()
         result.setWindowTitle("Результат")
         result.setText(f"X= ~{CX}\nY= ~{CY}\nZ= ~{CZ}")
         result.setIcon(QMessageBox.Icon.Information)
-        
+
         # copy_x_button = result.addButton("COPY X", QMessageBox\
         #     .ButtonRole.AcceptRole)
         # copy_y_button = result.addButton("COPY Y", QMessageBox\
         #     .ButtonRole.AcceptRole)
         # copy_z_button = result.addButton("COPY Z", QMessageBox\
         #     .ButtonRole.AcceptRole)
-        
+
         # copy_x_button.clicked.connect(lambda: QApplication.clipboard()\
         #     .setText("~" + str(CX)))
         # copy_y_button.clicked.connect(lambda: QApplication.clipboard()\
         #     .setText("~" + str(CY)))
         # copy_z_button.clicked.connect(lambda: QApplication.clipboard()\
         #     .setText("~" + str(CZ)))
-        
-        
+
         result.setStandardButtons(QMessageBox.StandardButton.Close)
-        
+
         result.exec()
-        
-        #print(f"X: {CX},Y: {CY}, Z: {CZ}")
-       
-        
-        
+
+        # print(f"X: {CX},Y: {CY}, Z: {CZ}")
 
 
 def run_window():
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()

@@ -36,6 +36,6 @@ pyinstaller -F -w main.py
 3. Исполняемый файл должен быть создан в `<каталог проекта>/dist/>`
 
 ### Возможные ошибки
-#### При установке при помощи pip возникает ошибка `error: externally-managed-environment`.
+#### При установке при помощи pip возникает ошибка `error: externally-managed-environment`
 Для устанения ошибки выполните следующие команды в дирректории проекта `python -m venv .venv` и `source .venv/bin/activate` после чего попробуйте установить библиотеки снова.
 
