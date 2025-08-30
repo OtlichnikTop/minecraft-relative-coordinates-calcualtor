@@ -1,5 +1,5 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QApplication, QMessageBox
+from PyQt6.QtWidgets import QMessageBox
 
 
 class Ui_MainWindow(object):
@@ -155,7 +155,16 @@ class Ui_MainWindow(object):
         self.pushButton_Calculate.setFont(font)
         self.pushButton_Calculate.setStyleSheet(
             "color: rgb(0, 170, 255);\n"
-            "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0.255435 rgba(0, 0, 255, 255), stop:0.521739 rgba(85, 0, 255, 255));"
+            """
+            background-color: qlineargradient(
+                spread:pad,
+                x1:0,
+                y1:0,
+                x2:1,
+                y2:1,
+                stop:0.255435 rgba(0, 0, 255, 255),
+                stop:0.521739 rgba(85, 0, 255, 255)
+            );"""
         )
         self.pushButton_Calculate.setObjectName("pushButton_Calculate")
         MainWindow.setCentralWidget(self.centralwidget)
