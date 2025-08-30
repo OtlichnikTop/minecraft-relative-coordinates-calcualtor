@@ -1,5 +1,5 @@
 # Minecraft Relative Coordinates Calculator
-EN [RU](READMES/README-ru.md) 
+EN [RU](READMES/README-ru.md)
 ## About the project
 This project was written by me for myself, when I got tired of calculating relative coordinates for command block.
 
@@ -36,6 +36,6 @@ pyinstaller -F -w main.py
 3. The executable file should be created in `<project directory>/dist/>`
 
 ### Possible errors
-#### When installing with pip, an error `error: externally-managed-environment` occurs.
+#### When installing with pip, an error `error: externally-managed-environment` occurs
 To fix the error, run the following commands in the project directory `python -m venv .venv` and `source .venv/bin/activate` and then try to install the libraries again.
 
